@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-29T22:26:04-07:00</updated>
+  <updated>2013-05-29T22:26:56-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -24,8 +24,10 @@
 
 <p>There are two basic sets of regular expressions: basic and extended. Most programs in linux use the basic regular expression type. Check out this table I stole from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>:</p>
 
-<p><b>Basic:</b> vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
-<b>Extended:</b> awk, nawk, egrep</p>
+<p><b>Basic:</b> vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist</p>
+
+<br><b>Extended:</b> awk, nawk, egrep
+
 ]]></content>
   </entry>
   
