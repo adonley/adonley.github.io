@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-29T22:26:56-07:00</updated>
+  <updated>2013-05-30T01:27:12-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -22,11 +22,14 @@
 
 <p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Tompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regualr Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
 
-<p>There are two basic sets of regular expressions: basic and extended. Most programs in linux use the basic regular expression type. Check out this table I stole from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>:</p>
+<p>There are two basic sets of regular expressions: basic and extended. Most programs in linux use the basic regular expression type.  Here&rsquo;s a list of programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
 
-<p><b>Basic:</b> vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist</p>
+<div>
+  <pre><code class='ruby'>Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
+Extended: awk, nawk, egrep</code></pre>
+</div>
 
-<br><b>Extended:</b> awk, nawk, egrep
+
 
 ]]></content>
   </entry>
