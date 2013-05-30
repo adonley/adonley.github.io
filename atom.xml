@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+
+  <title><![CDATA[Quick Insights]]></title>
+  <link href="http://adonley.github.io/atom.xml" rel="self"/>
+  <link href="http://adonley.github.io/"/>
+  <updated>2013-05-29T17:36:47-07:00</updated>
+  <id>http://adonley.github.io/</id>
+  <author>
+    <name><![CDATA[Andrew Donley]]></name>
+    
+  </author>
+  <generator uri="http://octopress.org/">Octopress</generator>
+
+  
+  <entry>
+    <title type="html"><![CDATA[A Breif Overview: Regular Expressions (in Linux)]]></title>
+    <link href="http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/"/>
+    <updated>2013-05-29T16:09:00-07:00</updated>
+    <id>http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux</id>
+    <content type="html"><![CDATA[
+]]></content>
+  </entry>
+  
+</feed>
