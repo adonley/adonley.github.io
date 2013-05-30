@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-29T22:19:01-07:00</updated>
+  <updated>2013-05-29T22:26:04-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -24,77 +24,8 @@
 
 <p>There are two basic sets of regular expressions: basic and extended. Most programs in linux use the basic regular expression type. Check out this table I stole from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>:</p>
 
-<table>
-    <tr>
-        <td align=center>Utility</td>
-        <td>Regular Expression Type</td>
-    </tr>
-    <tr>
-        <td align=left>vi</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>sed</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>grep</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>csplit</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>dbx</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>dbxtool</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>more</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>ed</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>expr</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>lex</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>pg</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>nl</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>rdist</td>
-        <td align=left>Basic </td>
-    </tr>
-    <tr>
-        <td align=left>awk</td>
-        <td align=left>Extended </td>
-    </tr>
-    <tr>
-        <td align=left>nawk</td>
-        <td align=left>Extended </td>
-    </tr>
-    <tr>
-        <td align=left>egrep</td>
-        <td align=left>Extended</td>
-    </tr>
-</table>
-
+<p><b>Basic:</b> vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
+<b>Extended:</b> awk, nawk, egrep</p>
 ]]></content>
   </entry>
   
