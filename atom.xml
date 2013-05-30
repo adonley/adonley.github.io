@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-29T20:13:13-07:00</updated>
+  <updated>2013-05-29T21:58:16-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,9 +18,11 @@
     <link href="http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/"/>
     <updated>2013-05-29T16:09:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux</id>
-    <content type="html"><![CDATA[<p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them.</p>
+    <content type="html"><![CDATA[<p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
 
-<p>You save a lot of time if you just learn a few basic things about regular expressions. I want to mention that there are two basic sets of regular expressions: basic and extended.</p>
+<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Tompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regualr Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
+
+<p>There are two basic sets of regular expressions: basic and extended. Most programs in linux use the basic regular expression type.</p>
 ]]></content>
   </entry>
   
