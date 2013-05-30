@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-30T04:52:07-07:00</updated>
+  <updated>2013-05-30T04:55:13-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -45,7 +45,7 @@ Extended: awk, nawk, egrep</code></pre>
 </div>
 
 
-<p>&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line &#92; This was added in Extended Regular Expressions</p>
+<p>&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line <small> This was added in Extended Regular Expressions </small></p>
 
 <div>
   <pre><code class='bash'></code></pre>
@@ -94,28 +94,28 @@ Extended: awk, nawk, egrep</code></pre>
 </div>
 
 
-<p>x{n}</p>
+<p>a{n} &ndash; Match &lsquo;a&rsquo; exactly n times.</p>
 
 <div>
   <pre><code class='bash'></code></pre>
 </div>
 
 
-<p>x{n,}</p>
+<p>a{n,} &ndash; Match &lsquo;a&rsquo; at least n times.</p>
 
 <div>
   <pre><code class='bash'></code></pre>
 </div>
 
 
-<p>x{n,m}</p>
+<p>a{n,m} &ndash; Match &lsquo;a&rsquo; at least n times, but not more than m times.</p>
 
 <div>
   <pre><code class='bash'></code></pre>
 </div>
 
 
-<p>&lsquo;|&rsquo;</p>
+<p>&lsquo;|&rsquo; &ndash; This is the logical or symbol.</p>
 
 <div>
   <pre><code class='bash'></code></pre>
