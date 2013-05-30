@@ -106,20 +106,92 @@ Extended: awk, nawk, egrep</code></pre>
 </div>
 
 
-<p>The main difference between basic and extended has to do with compatability. Some database systems use Basic which forces statements that have</p>
+<p>The main difference between basic and extended has to do with the way metacharacters are expressed.</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
 
 <p>Let&rsquo;s get into some basic examples and the difference between extended and basic will become clear.
-&lsquo;^&rsquo; &ndash; Match epsilon (empty string) from the end of the line
-&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line
-&lsquo;.&rsquo; &ndash; Match any one character
-&lsquo;[a-m]&rsquo; &ndash; Match any character a through m lowercase
-&lsquo;[^a-m]&rsquo; &ndash; Match any character that is not a through m lowercase
-? &ndash; Match one occurance of
-* &ndash; Kleene Star [remember this from Theory of Computation?]. Match epsilon or arbitrarily many of preceding character or range.
-+ &ndash;
-x{n}
-x{n,m}
-&lsquo;|&rsquo;</p>
+&lsquo;^&rsquo; &ndash; Match epsilon (empty string) from the end of the line \ This was added in extended</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line \ This was added in extended</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>&lsquo;.&rsquo; &ndash; Match any one character \ This was added in extended</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>&lsquo;[a-m]&rsquo; &ndash; Match any character a through m lowercase</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>&lsquo;[^a-m]&rsquo; &ndash; Match any character that is not a through m lowercase</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>? &ndash; Match one occurance of</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>* &ndash; Kleene Star [remember this from Theory of Computation?]. Match epsilon or arbitrarily many of preceding character or range.</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>+ &ndash;</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>x{n}</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>x{n,m}</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+<p>&lsquo;|&rsquo;</p>
+
+<div>
+  <pre><code class='bash'></code></pre>
+</div>
+
+
+
 </div>
   
   
