@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-30T04:51:23-07:00</updated>
+  <updated>2013-05-30T04:52:07-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -131,7 +131,7 @@ Extended: awk, nawk, egrep</code></pre>
 <a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/"><a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/">http://www.ibm.com/developerworks/aix/library/au-speakingunix9/</a></a><br>
 <a href="http://en.wikipedia.org/wiki/Regular_expression"><a href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</a></a><br>
 <a href="http://www.regular-expressions.info/posix.html"><a href="http://www.regular-expressions.info/posix.html">http://www.regular-expressions.info/posix.html</a></a><br>
-And, finally consult your man pages when in doubt. There are some good instructions in the man pages for grep, especially about the differences between basic and extended regular expressions.</p>
+And finally, always consult your man pages when in doubt. There are some good instructions in the man pages for grep, especially about the differences between basic and extended regular expressions.</p>
 ]]></content>
   </entry>
   
