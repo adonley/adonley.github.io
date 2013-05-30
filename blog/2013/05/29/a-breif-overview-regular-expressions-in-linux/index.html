@@ -95,7 +95,7 @@
 
 <p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Tompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regualr Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
 
-<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type.  Here&rsquo;s a list of programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
+<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
 
 <div>
   <pre><code class='bash'>Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
@@ -111,21 +111,21 @@ Extended: awk, nawk, egrep</code></pre>
 
 
 <p>Let&rsquo;s get into some basic examples and the difference between extended and basic will become clear.
-&lsquo;^&rsquo; &ndash; Match epsilon (empty string) from the end of the line \ This was added in extended</p>
+&lsquo;^&rsquo; &ndash; Match epsilon (empty string) from the end of the line &#92; This was added in Extended Regular Expressions</p>
 
 <div>
   <pre><code class='bash'></code></pre>
 </div>
 
 
-<p>&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line \ This was added in extended</p>
+<p>&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line &#92; This was added in Extended Regular Expressions</p>
 
 <div>
   <pre><code class='bash'></code></pre>
 </div>
 
 
-<p>&lsquo;.&rsquo; &ndash; Match any one character \ This was added in extended</p>
+<p>&lsquo;.&rsquo; &ndash; Match any one character &#92; This was added in Extended Regular Expressions</p>
 
 <div>
   <pre><code class='bash'></code></pre>
