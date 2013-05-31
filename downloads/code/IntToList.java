@@ -67,9 +67,9 @@ public class IntToList {
   
   public void printList() {
 	
-	System.out.print("Converted Integer to List: ");
+    System.out.print("Converted Integer to List: ");
 	
-	// Print out all the single digits in the list
+    // Print out all the single digits in the list
     for (Integer i : converted) {
     	System.out.print(i);
     }
