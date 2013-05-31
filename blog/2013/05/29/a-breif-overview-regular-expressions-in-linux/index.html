@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>A Breif Overview: Regular Expressions (in Linux) - Found Objects</title>
+  <title>A Breif Review: Regular Expressions (in Linux) - Found Objects</title>
   <meta name="author" content="Andrew Donley">
 
   
@@ -68,7 +68,7 @@
   
   <header>
     
-      <h1 class="entry-title">A Breif Overview: Regular Expressions (in Linux)</h1>
+      <h1 class="entry-title">A Breif Review: Regular Expressions (in Linux)</h1>
     
     
       <p class="meta">
@@ -97,6 +97,9 @@
 
 <p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
 
+<!--more-->
+
+
 <div>
   <pre><code class='bash'>Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
 Extended: awk, nawk, egrep</code></pre>
@@ -122,6 +125,14 @@ Extended: awk, nawk, egrep</code></pre>
   <li>&#8217;|&#8217; - This is the logical or symbol.</li>
 </ul>
 
+
+<p>Now check this out:</p>
+
+<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+</pre></td><td class='code'><pre><code class=''><span class='line'>$ ls -la | grep -E 'profile$'</span></code></pre></td></tr></table></div></figure>
+
+
+<p>This command will match all the files in /etc/ that end with profile.</p>
 
 <p>See if you can use this to find the meaning of the site&rsquo;s subtitle.</p>
 
@@ -158,6 +169,12 @@ And finally, always consult your man pages when in doubt. There are some good in
 <time datetime="2013-05-29T16:09:00-07:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
       
 
+<span class="categories">
+  
+    <a class='category' href='/blog/categories/bash/'>Bash</a>, <a class='category' href='/blog/categories/regular-expressions/'>Regular Expressions</a>
+  
+</span>
+
 
     </p>
     
@@ -190,7 +207,7 @@ And finally, always consult your man pages when in doubt. There are some good in
   <ul id="recent_posts">
     
       <li class="post">
-        <a href="/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/">A Breif Overview: Regular Expressions (in Linux)</a>
+        <a href="/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/">A Breif Review: Regular Expressions (in Linux)</a>
       </li>
     
   </ul>
