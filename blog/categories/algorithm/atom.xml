@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-31T06:44:06-07:00</updated>
+  <updated>2013-05-31T06:46:28-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -21,9 +21,6 @@
     <content type="html"><![CDATA[<p>Here&rsquo;s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
 
 <p>Write a function that will convert an integer into a list of single digits.</p>
-
-<hr>
-
 
 <p>So, how do you separate individual digits out of an integer? Simply put division (or shift right logical in base 2).</p>
 
