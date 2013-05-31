@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-05-30T23:24:19-07:00</updated>
+  <updated>2013-05-31T02:22:56-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -34,18 +34,21 @@ Extended: awk, nawk, egrep</code></pre>
 
 <p>Here are some of the meta chars used by extended regular expressions:</p>
 
-<p>&lsquo;^&rsquo; &ndash; Match epsilon (empty string) from the end of the line <small><i> This was added in Extended Regular Expressions </i></small>
-&lsquo;$&rsquo; &ndash; Match epsilon (empty string) at the end of the line <small><i> This was added in Extended Regular Expressions</i> </small>
-&lsquo;.&rsquo; &ndash; Match any one character <small><i> This was added in Extended Regular Expressions</i></small>
-&lsquo;[a-m]&rsquo; &ndash; Match any character a through m lowercase
-&lsquo;[^a-m]&rsquo; &ndash; Match any character that is not a through m lowercase
-&lsquo;?&rsquo; &ndash; Match one occurance or none of the preceding object.
-&lsquo;*&rsquo; &ndash; Kleene Star [remember this?]. Match zero or arbitrarily many of preceding object.
-&lsquo;+&rsquo; &ndash; The preceding object will be matched one or more times.
-a{n} &ndash; Match &lsquo;a&rsquo; exactly n times.
-a{n,} &ndash; Match &lsquo;a&rsquo; at least n times.
-a{n,m} &ndash; Match &lsquo;a&rsquo; at least n times, but not more than m times.
-&lsquo;|&rsquo; &ndash; This is the logical or symbol.</p>
+<ul>
+  <li>&#8217;^&#8217; - Match epsilon (empty string) from the end of the line <small><i>[This was added in Extended Regular Expressions]</i></small></li>
+  <li>&#8217;$&#8217; - Match epsilon (empty string) at the end of the line <small><i>[This was added in Extended Regular Expressions]</i> </small></li>
+  <li>&#8217;.&#8217; - Match any one character <small><i>[This was added in Extended Regular Expressions]</i></small></li>
+  <li>&#8216;[a-m]&#8217; - Match any character a through m lowercase</li>
+  <li>&#8217;[^a-m]&#8217; - Match any character that is not a through m lowercase</li>
+  <li>&#8217;?&#8217; - Match one occurance or none of the preceding object.</li>
+  <li>&#8217;\*&#8217; - Kleene Star [remember this?]. Match zero or arbitrarily many of preceding object.</li>
+  <li>&#8217;\+&#8217; - The preceding object will be matched one or more times.</li>
+  <li>a{n} - Match &#8216;a&#8217; exactly n times.</li>
+  <li>a{n,} - Match &#8216;a&#8217; at least n times.</li>
+  <li>a{n,m} - Match &#8216;a&#8217; at least n times, but not more than m times.</li>
+  <li>&#8217;|&#8217; - This is the logical or symbol.</li>
+</ul>
+
 
 <p>See if you can use this to find the meaning of the site&rsquo;s subtitle.</p>
 
