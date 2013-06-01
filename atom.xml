@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-01T05:15:11-07:00</updated>
+  <updated>2013-06-01T05:20:10-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -276,7 +276,8 @@
 </span></code></pre></td></tr></table></div></figure>
 
 
-
+<p>The first line in nodes.txt signifies how many nodes there are in the list.
+The value on the second line signifies which node to connect the last node to (i.e.&ndash; from which node to create the loop in the linked list). A negative value here signifies not to create a loop.</p>
 
 <figure class='code'><figcaption><span> (nodes.txt)</span> <a href='http://adonley.github.io/downloads/code/nodes.txt'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -287,7 +288,7 @@
 <span class='line-number'>6</span>
 <span class='line-number'>7</span>
 </pre></td><td class='code'><pre><code class='bash'><span class='line'>5
-</span><span class='line'>-1
+</span><span class='line'>3
 </span><span class='line'>876
 </span><span class='line'>877
 </span><span class='line'>878
