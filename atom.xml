@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-01T05:20:10-07:00</updated>
+  <updated>2013-06-01T05:22:42-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -26,7 +26,9 @@
 
 <p>In the following code example I made the one iterator move twice as fast as the other. Each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
 
-<p>Feel free to download and try it yourself:</p>
+<p>Feel free to download and try it yourself.</p>
+
+<p>Compile with:</p>
 
 <figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
@@ -34,6 +36,9 @@
 </span><span class='line'>$ ./LinkedListLoopDetection &lt; nodes.txt</span></code></pre></td></tr></table></div></figure>
 
 
+
+
+<!--more-->
 
 
 <figure class='code'><figcaption><span> (LinkedListLoopDetection.c)</span> <a href='http://adonley.github.io/downloads/code/LinkedListLoopDetection.c'>download</a></figcaption>
