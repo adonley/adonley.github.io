@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
 
-  <title><![CDATA[Found Objects]]></title>
-  <link href="http://adonley.github.io/atom.xml" rel="self"/>
+  <title><![CDATA[Category: algorithms | Found Objects]]></title>
+  <link href="http://adonley.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
   <updated>2013-06-01T05:15:11-07:00</updated>
   <id>http://adonley.github.io/</id>
@@ -28,15 +28,12 @@
 
 <p>Feel free to download and try it yourself:</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 </pre></td><td class='code'><pre><code class=''><span class='line'>$ gcc LinkedListLoopDetection.c -o LinkedListLoopDetection
-</span><span class='line'>$ ./LinkedListLoopDetection &lt; nodes.txt</span></code></pre></td></tr></table></div></figure>
+</span><span class='line'>$ ./LinkedListLoopDetection &lt; nodes.txt</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-
-
-
-<figure class='code'><figcaption><span> (LinkedListLoopDetection.c)</span> <a href='http://adonley.github.io/downloads/code/LinkedListLoopDetection.c'>download</a></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (LinkedListLoopDetection.c)</span> <a href='/downloads/code/LinkedListLoopDetection.c'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -273,12 +270,9 @@
 </span><span class='line'>
 </span><span class='line'>  <span class="k">return</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
-
-
-
-<figure class='code'><figcaption><span> (nodes.txt)</span> <a href='http://adonley.github.io/downloads/code/nodes.txt'>download</a></figcaption>
+<p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (nodes.txt)</span> <a href='/downloads/code/nodes.txt'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
 <span class='line-number'>2</span>
 <span class='line-number'>3</span>
@@ -293,254 +287,7 @@
 </span><span class='line'>878
 </span><span class='line'>879
 </span><span class='line'>880
-</span></code></pre></td></tr></table></div></figure>
-
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[An Interview Question]]></title>
-    <link href="http://adonley.github.io/blog/2013/05/31/an-interview-question/"/>
-    <updated>2013-05-31T02:53:00-07:00</updated>
-    <id>http://adonley.github.io/blog/2013/05/31/an-interview-question</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
-
-<p>Write a function that will convert an integer into a list of single digits.</p>
-
-<p>So, how do you separate individual digits out of an integer? Simply put division (or shift right logical in base 2).</p>
-
-<p>Say we had the number 112095. If we divide this number by 10 we achieve 11209.5 or 11209 remainder 5. The remainder will allow us to isolate the least significant digit. The main idea lies within taking the modulus of the original number by 10.</p>
-
-<p>This is a quick java program I wrote up that does this:</p>
-
-<figure class='code'><figcaption><span> (IntToList.java)</span> <a href='http://adonley.github.io/downloads/code/IntToList.java'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">java.lang.Integer</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntToList</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">private</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">converted</span><span class="o">;</span>
-</span><span class='line'>  <span class="kd">private</span> <span class="n">Integer</span> <span class="n">toBeConverted</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">argv</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// Create a IntToList Object to use during conversion</span>
-</span><span class='line'>  <span class="n">IntToList</span> <span class="n">obj</span><span class="o">;</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="c1">// Create a buffered reader to read the integer</span>
-</span><span class='line'>    <span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// To be used to get the input of a file</span>
-</span><span class='line'>    <span class="n">String</span> <span class="n">input</span><span class="o">;</span>
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s: &quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer to convert&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>      <span class="c1">// Read in the user input</span>
-</span><span class='line'>      <span class="n">input</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// Convert the string to an int using library functions</span>
-</span><span class='line'>      <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntToList</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">obj</span><span class="o">.</span><span class="na">convertToList</span><span class="o">();</span>
-</span><span class='line'>      <span class="n">obj</span><span class="o">.</span><span class="na">printList</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NumberFormatException</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// Catch a non-integer input or too large input</span>
-</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s\n&quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer.&quot;</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">E</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Everything else</span>
-</span><span class='line'>      <span class="n">E</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="nf">IntToList</span><span class="o">(</span><span class="n">Integer</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="c1">// Initializations</span>
-</span><span class='line'>    <span class="n">toBeConverted</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
-</span><span class='line'>    <span class="n">converted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">convertToList</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">toBeConverted</span><span class="o">.</span><span class="na">intValue</span><span class="o">(),</span> <span class="n">remainder</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Once the integer is equal to zero, there are no more single digits to extract</span>
-</span><span class='line'>    <span class="k">while</span><span class="o">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>      
-</span><span class='line'>      <span class="c1">// This remainder will be committed to the list of integers</span>
-</span><span class='line'>      <span class="n">remainder</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">10</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// This will add the integer to the front of the list</span>
-</span><span class='line'>      <span class="n">converted</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="n">remainder</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// This will remove a power of 10 from the read in integer, casted to not be a double</span>
-</span><span class='line'>      <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">temp</span> <span class="o">/</span> <span class="mi">10</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Converted Integer to List: &quot;</span><span class="o">);</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="c1">// Print out all the single digits in the list</span>
-</span><span class='line'>    <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="o">:</span> <span class="n">converted</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\n&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-]]></content>
-  </entry>
-  
-  <entry>
-    <title type="html"><![CDATA[A Breif Review: Regular Expressions (in Linux)]]></title>
-    <link href="http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/"/>
-    <updated>2013-05-29T16:09:00-07:00</updated>
-    <id>http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux</id>
-    <content type="html"><![CDATA[<p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
-
-<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Tompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regualr Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
-
-<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
-
-<!--more-->
-
-
-<div>
-  <pre><code class='bash'>Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
-Extended: awk, nawk, egrep</code></pre>
-</div>
-
-
-<p>The main difference between basic and extended has to do with the way metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as &lsquo;{&rsquo; are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
-
-<p>Here are some of the meta chars used by extended regular expressions:</p>
-
-<ul>
-  <li>&#8217;^&#8217; - Match epsilon (empty string) from the end of the line <small><i>[This was added in Extended Regular Expressions]</i></small></li>
-  <li>&#8217;$&#8217; - Match epsilon (empty string) at the end of the line <small><i>[This was added in Extended Regular Expressions]</i> </small></li>
-  <li>&#8217;.&#8217; - Match any one character <small><i>[This was added in Extended Regular Expressions]</i></small></li>
-  <li>&#8216;[a-m]&#8217; - Match any character a through m lowercase</li>
-  <li>&#8217;[^a-m]&#8217; - Match any character that is not a through m lowercase</li>
-  <li>&#8217;?&#8217; - Match one occurance or none of the preceding object.</li>
-  <li>&#8217;\*&#8217; - Kleene Star [remember this?]. Match zero or arbitrarily many of preceding object.</li>
-  <li>&#8217;\+&#8217; - The preceding object will be matched one or more times.</li>
-  <li>a{n} - Match &#8216;a&#8217; exactly n times.</li>
-  <li>a{n,} - Match &#8216;a&#8217; at least n times.</li>
-  <li>a{n,m} - Match &#8216;a&#8217; at least n times, but not more than m times.</li>
-  <li>&#8217;|&#8217; - This is the logical or symbol.</li>
-</ul>
-
-
-<p>Now check this out:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ls -la | grep -E 'profile$'</span></code></pre></td></tr></table></div></figure>
-
-
-<p>This command will match all the files in /etc/ that end with profile.</p>
-
-<p>See if you can use this to find the meaning of the site&rsquo;s subtitle.</p>
-
-<hr>
-
-
-<p>For more information visit:<br>
-<a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/"><a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/">http://www.ibm.com/developerworks/aix/library/au-speakingunix9/</a></a><br>
-<a href="http://en.wikipedia.org/wiki/Regular_expression"><a href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</a></a><br>
-<a href="http://www.regular-expressions.info/posix.html"><a href="http://www.regular-expressions.info/posix.html">http://www.regular-expressions.info/posix.html</a></a><br>
-And finally, always consult your man pages when in doubt. There are some good instructions in the man pages for grep, especially about the differences between basic and extended regular expressions.</p>
+</span></code></pre></td></tr></table></div></figure></notextile></div></p>
 ]]></content>
   </entry>
   
