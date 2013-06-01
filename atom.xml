@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-01T05:22:42-07:00</updated>
+  <updated>2013-06-01T07:42:51-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -36,9 +36,6 @@
 </span><span class='line'>$ ./LinkedListLoopDetection &lt; nodes.txt</span></code></pre></td></tr></table></div></figure>
 
 
-
-
-<!--more-->
 
 
 <figure class='code'><figcaption><span> (LinkedListLoopDetection.c)</span> <a href='http://adonley.github.io/downloads/code/LinkedListLoopDetection.c'>download</a></figcaption>
@@ -279,6 +276,11 @@
 </span><span class='line'>  <span class="k">return</span><span class="p">;</span>
 </span><span class='line'><span class="p">}</span>
 </span></code></pre></td></tr></table></div></figure>
+
+
+
+
+<!--more-->
 
 
 <p>The first line in nodes.txt signifies how many nodes there are in the list.
