@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-03T00:25:25-07:00</updated>
+  <updated>2013-06-03T19:52:03-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,13 +18,13 @@
     <link href="http://adonley.github.io/blog/2013/05/31/more-interview-questions/"/>
     <updated>2013-05-31T21:22:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/05/31/more-interview-questions</id>
-    <content type="html"><![CDATA[<p>This is another problem that is bound to come up during interviews.</p>
+    <content type="html"><![CDATA[<p>This is another problem that is bound to come up during an interview.</p>
 
 <p>How would you tell if there is a loop in a linked list if there is an arbitrary length, using little to no memory?</p>
 
-<p>The idea in solving this problem is having two iterators, one which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to or laps the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
+<p>The idea in solving this problem is having two iterators, one of which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to &ndash; or laps &ndash; the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
 
-<p>In the following code example I made the one iterator move twice as fast as the other. Each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
+<p>In the following code example I made the one iterator move twice as fast as the other. At each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
 
 <p>Feel free to download and try it yourself.</p>
 
@@ -315,11 +315,11 @@ The value on the second line signifies which node to connect the last node to (i
 
 <p>Write a function that will convert an integer into a list of single digits.</p>
 
-<p>So, how do you separate individual digits out of an integer? Simply put division (or shift right logical in base 2).</p>
+<p>So, how do you separate individual digits out of an integer? Simply put, division.</p>
 
 <p>Say we had the number 112095. If we divide this number by 10 we achieve 11209.5 or 11209 remainder 5. The remainder will allow us to isolate the least significant digit. The main idea lies within taking the modulus of the original number by 10.</p>
 
-<p>This is a quick java program I wrote up that does this:</p>
+<p>This is a quick java program I wrote up that accomplishes this:</p>
 
 <figure class='code'><figcaption><span> (IntToList.java)</span> <a href='http://adonley.github.io/downloads/code/IntToList.java'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
@@ -498,7 +498,7 @@ The value on the second line signifies which node to connect the last node to (i
     <id>http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux</id>
     <content type="html"><![CDATA[<p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
 
-<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Tompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regualr Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
+<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regular Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
 
 <p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
 
@@ -511,7 +511,7 @@ Extended: awk, nawk, egrep</code></pre>
 </div>
 
 
-<p>The main difference between basic and extended has to do with the way metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as &lsquo;{&rsquo; are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
+<p>The main difference between basic and extended concerns the way in which metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as &lsquo;{&rsquo; are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
 
 <p>Here are some of the meta chars used by extended regular expressions:</p>
 

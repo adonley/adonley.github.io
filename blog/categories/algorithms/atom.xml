@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-03T00:25:25-07:00</updated>
+  <updated>2013-06-03T19:52:03-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,13 +18,13 @@
     <link href="http://adonley.github.io/blog/2013/05/31/more-interview-questions/"/>
     <updated>2013-05-31T21:22:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/05/31/more-interview-questions</id>
-    <content type="html"><![CDATA[<p>This is another problem that is bound to come up during interviews.</p>
+    <content type="html"><![CDATA[<p>This is another problem that is bound to come up during an interview.</p>
 
 <p>How would you tell if there is a loop in a linked list if there is an arbitrary length, using little to no memory?</p>
 
-<p>The idea in solving this problem is having two iterators, one which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to or laps the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
+<p>The idea in solving this problem is having two iterators, one of which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to &ndash; or laps &ndash; the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
 
-<p>In the following code example I made the one iterator move twice as fast as the other. Each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
+<p>In the following code example I made the one iterator move twice as fast as the other. At each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
 
 <p>Feel free to download and try it yourself.</p>
 

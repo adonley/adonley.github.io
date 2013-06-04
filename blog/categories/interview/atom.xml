@@ -4,7 +4,7 @@
   <title><![CDATA[Category: interview | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/interview/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-03T00:25:25-07:00</updated>
+  <updated>2013-06-03T19:52:03-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -22,11 +22,11 @@
 
 <p>Write a function that will convert an integer into a list of single digits.</p>
 
-<p>So, how do you separate individual digits out of an integer? Simply put division (or shift right logical in base 2).</p>
+<p>So, how do you separate individual digits out of an integer? Simply put, division.</p>
 
 <p>Say we had the number 112095. If we divide this number by 10 we achieve 11209.5 or 11209 remainder 5. The remainder will allow us to isolate the least significant digit. The main idea lies within taking the modulus of the original number by 10.</p>
 
-<p>This is a quick java program I wrote up that does this:</p>
+<p>This is a quick java program I wrote up that accomplishes this:</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (IntToList.java)</span> <a href='/downloads/code/IntToList.java'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
