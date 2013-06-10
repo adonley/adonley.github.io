@@ -9,7 +9,7 @@
   <meta name="author" content="Andrew Donley">
 
   
-  <meta name="description" content="If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful &hellip;">
+  <meta name="description" content="If you’re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +29,36 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
   
 
@@ -91,22 +121,18 @@
   </header>
 
 
-<div class="entry-content"><p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
+<div class="entry-content"><p>If you’re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
 
-<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regular Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
+<p>A quick side note about regular expressions - they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command ‘grep’ was born. ‘g/re/p’ meant Global search for Regular Expression and Print matching lines in ‘ed’.</p>
 
-<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
-
-<!--more-->
-
-
+<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here’s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a>) 
+<!--more--></p>
 <div>
-  <pre><code class='bash'>Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
+  <pre><code class="bash">Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
 Extended: awk, nawk, egrep</code></pre>
 </div>
 
-
-<p>The main difference between basic and extended concerns the way in which metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as &lsquo;{&rsquo; are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
+<p>The main difference between basic and extended concerns the way in which metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as ‘{‘ are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
 
 <p>Here are some of the meta chars used by extended regular expressions:</p>
 
@@ -125,24 +151,19 @@ Extended: awk, nawk, egrep</code></pre>
   <li>&#8217;|&#8217; - This is the logical or symbol.</li>
 </ul>
 
+<p>Now check this out:
+&lt;div class=&#8217;bogus-wrapper&#8217;&gt;<notextile><figure class="code">&lt;div class=&#8221;highlight&#8221;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&#8221;gutter&#8221;&gt;&lt;pre class=&#8221;line-numbers&#8221;&gt;<span class="line-number">1</span>
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&#8217;code&#8217;&gt;&lt;pre&gt;<code class=""><span class="line">$ ls -la | grep -E 'profile$'</span></code>&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;</figure></notextile>&lt;/div&gt;
+This command will match all the files in /etc/ that end with profile.</p>
 
-<p>Now check this out:</p>
+<p>See if you can use this to find the meaning of the site’s subtitle.</p>
 
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ ls -la | grep -E 'profile$'</span></code></pre></td></tr></table></div></figure>
+<hr />
 
-
-<p>This command will match all the files in /etc/ that end with profile.</p>
-
-<p>See if you can use this to find the meaning of the site&rsquo;s subtitle.</p>
-
-<hr>
-
-
-<p>For more information visit:<br>
-<a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/"><a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/">http://www.ibm.com/developerworks/aix/library/au-speakingunix9/</a></a><br>
-<a href="http://en.wikipedia.org/wiki/Regular_expression"><a href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</a></a><br>
-<a href="http://www.regular-expressions.info/posix.html"><a href="http://www.regular-expressions.info/posix.html">http://www.regular-expressions.info/posix.html</a></a><br>
+<p>For more information visit:<br />
+<a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/">http://www.ibm.com/developerworks/aix/library/au-speakingunix9/</a><br />
+<a href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</a><br />
+<a href="http://www.regular-expressions.info/posix.html">http://www.regular-expressions.info/posix.html</a><br />
 And finally, always consult your man pages when in doubt. There are some good instructions in the man pages for grep, especially about the differences between basic and extended regular expressions.</p>
 </div>
 

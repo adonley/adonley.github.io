@@ -4,7 +4,7 @@
   <title><![CDATA[Category: dynamic programming | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/dynamic-programming/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-09T21:22:48-07:00</updated>
+  <updated>2013-06-09T21:32:42-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,11 +18,11 @@
     <link href="http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem/"/>
     <updated>2013-06-08T21:45:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem</id>
-    <content type="html"><![CDATA[<p>In the Copy Paste Select-All problem, a user wants to replicate the most amount of &lsquo;a&rsquo;s with the least amount of keystrokes. I was asked how many keystrokes would be necessary to produce 50,000 'a&rsquo;s.</p>
+    <content type="html"><![CDATA[<p>In the Copy Paste Select-All problem, a user wants to replicate the most amount of ‘a’s with the least amount of keystrokes. I was asked how many keystrokes would be necessary to produce 50,000 ‘a’s.</p>
 
-<p>There are 3 basic ways to create &lsquo;a&rsquo;s: Pressing 'a&rsquo;, Selecting-All &ndash;> Copying &ndash;> Pasting, and Pasting what is in the clip board. Pressing &lsquo;a&rsquo; will cost 1 keystroke while selecting-all, copying, pasting will cost 2 each. So just pasting will cost 2 keystrokes, but selecting-all &ndash;> copying &ndash;> pasting will cost 6.</p>
+<p>There are 3 basic ways to create ‘a’s: Pressing ‘a’, Selecting-All -&gt; Copying -&gt; Pasting, and Pasting what is in the clip board. Pressing ‘a’ will cost 1 keystroke while selecting-all, copying, pasting will cost 2 each. So just pasting will cost 2 keystrokes, but selecting-all -&gt; copying -&gt; pasting will cost 6.</p>
 
-<p>Now let&rsquo;s create the recursive definition of our dynamic programming problem.
+<p>Now let’s create the recursive definition of our dynamic programming problem.
 $$
 L(x) = { \mbox{max}[ L(x-6)*2,L(x-2)+buffer,L(x-1)+1 ] }
 $$</p>

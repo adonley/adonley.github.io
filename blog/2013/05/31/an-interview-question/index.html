@@ -9,7 +9,7 @@
   <meta name="author" content="Andrew Donley">
 
   
-  <meta name="description" content="Here&rsquo;s one of the (admittedly easy) questions I received during an interview at Palantir: Write a function that will convert an integer into a &hellip;">
+  <meta name="description" content="Here’s one of the (admittedly easy) questions I received during an interview at Palantir: Write a function that will convert an integer into a list &hellip;">
   
 
   <!-- http://t.co/dKP3o1e -->
@@ -29,6 +29,36 @@
   <!--Fonts from Google"s Web font directory at http://google.com/webfonts -->
 <link href="http://fonts.googleapis.com/css?family=PT+Serif:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
 <link href="http://fonts.googleapis.com/css?family=PT+Sans:regular,italic,bold,bolditalic" rel="stylesheet" type="text/css">
+<!-- MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({
+    tex2jax: {
+      inlineMath: [ ['$','$'], ["\\(","\\)"] ],
+      processEscapes: true
+    }
+  });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+      tex2jax: {
+        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      }
+    });
+</script>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for(i=0; i < all.length; i += 1) {
+            all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+    });
+</script>
+
+<script type="text/javascript"
+   src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>
 
   
 
@@ -91,7 +121,7 @@
   </header>
 
 
-<div class="entry-content"><p>Here&rsquo;s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
+<div class="entry-content"><p>Here’s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
 
 <p>Write a function that will convert an integer into a list of single digits.</p>
 
@@ -101,173 +131,170 @@
 
 <p>This is a quick java program I wrote up that accomplishes this:</p>
 
-<figure class='code'><figcaption><span> (IntToList.java)</span> <a href='/downloads/code/IntToList.java'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">java.lang.Integer</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntToList</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">private</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">converted</span><span class="o">;</span>
-</span><span class='line'>  <span class="kd">private</span> <span class="n">Integer</span> <span class="n">toBeConverted</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">argv</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// Create a IntToList Object to use during conversion</span>
-</span><span class='line'>  <span class="n">IntToList</span> <span class="n">obj</span><span class="o">;</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="c1">// Create a buffered reader to read the integer</span>
-</span><span class='line'>    <span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// To be used to get the input of a file</span>
-</span><span class='line'>    <span class="n">String</span> <span class="n">input</span><span class="o">;</span>
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s: &quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer to convert&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>      <span class="c1">// Read in the user input</span>
-</span><span class='line'>      <span class="n">input</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// Convert the string to an int using library functions</span>
-</span><span class='line'>      <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntToList</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">obj</span><span class="o">.</span><span class="na">convertToList</span><span class="o">();</span>
-</span><span class='line'>      <span class="n">obj</span><span class="o">.</span><span class="na">printList</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NumberFormatException</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// Catch a non-integer input or too large input</span>
-</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s\n&quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer.&quot;</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">E</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Everything else</span>
-</span><span class='line'>      <span class="n">E</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="nf">IntToList</span><span class="o">(</span><span class="n">Integer</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="c1">// Initializations</span>
-</span><span class='line'>    <span class="n">toBeConverted</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
-</span><span class='line'>    <span class="n">converted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">convertToList</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">toBeConverted</span><span class="o">.</span><span class="na">intValue</span><span class="o">(),</span> <span class="n">remainder</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Once the integer is equal to zero, there are no more single digits to extract</span>
-</span><span class='line'>    <span class="k">while</span><span class="o">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>      
-</span><span class='line'>      <span class="c1">// This remainder will be committed to the list of integers</span>
-</span><span class='line'>      <span class="n">remainder</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">10</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// This will add the integer to the front of the list</span>
-</span><span class='line'>      <span class="n">converted</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="n">remainder</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// This will remove a power of 10 from the read in integer, casted to not be a double</span>
-</span><span class='line'>      <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">temp</span> <span class="o">/</span> <span class="mi">10</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Converted Integer to List: &quot;</span><span class="o">);</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="c1">// Print out all the single digits in the list</span>
-</span><span class='line'>    <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="o">:</span> <span class="n">converted</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\n&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
+<div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (IntToList.java)</span> <a href="/downloads/code/IntToList.java">download</a></figcaption>
+ <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
+<span class="line-number">2</span>
+<span class="line-number">3</span>
+<span class="line-number">4</span>
+<span class="line-number">5</span>
+<span class="line-number">6</span>
+<span class="line-number">7</span>
+<span class="line-number">8</span>
+<span class="line-number">9</span>
+<span class="line-number">10</span>
+<span class="line-number">11</span>
+<span class="line-number">12</span>
+<span class="line-number">13</span>
+<span class="line-number">14</span>
+<span class="line-number">15</span>
+<span class="line-number">16</span>
+<span class="line-number">17</span>
+<span class="line-number">18</span>
+<span class="line-number">19</span>
+<span class="line-number">20</span>
+<span class="line-number">21</span>
+<span class="line-number">22</span>
+<span class="line-number">23</span>
+<span class="line-number">24</span>
+<span class="line-number">25</span>
+<span class="line-number">26</span>
+<span class="line-number">27</span>
+<span class="line-number">28</span>
+<span class="line-number">29</span>
+<span class="line-number">30</span>
+<span class="line-number">31</span>
+<span class="line-number">32</span>
+<span class="line-number">33</span>
+<span class="line-number">34</span>
+<span class="line-number">35</span>
+<span class="line-number">36</span>
+<span class="line-number">37</span>
+<span class="line-number">38</span>
+<span class="line-number">39</span>
+<span class="line-number">40</span>
+<span class="line-number">41</span>
+<span class="line-number">42</span>
+<span class="line-number">43</span>
+<span class="line-number">44</span>
+<span class="line-number">45</span>
+<span class="line-number">46</span>
+<span class="line-number">47</span>
+<span class="line-number">48</span>
+<span class="line-number">49</span>
+<span class="line-number">50</span>
+<span class="line-number">51</span>
+<span class="line-number">52</span>
+<span class="line-number">53</span>
+<span class="line-number">54</span>
+<span class="line-number">55</span>
+<span class="line-number">56</span>
+<span class="line-number">57</span>
+<span class="line-number">58</span>
+<span class="line-number">59</span>
+<span class="line-number">60</span>
+<span class="line-number">61</span>
+<span class="line-number">62</span>
+<span class="line-number">63</span>
+<span class="line-number">64</span>
+<span class="line-number">65</span>
+<span class="line-number">66</span>
+<span class="line-number">67</span>
+<span class="line-number">68</span>
+<span class="line-number">69</span>
+<span class="line-number">70</span>
+<span class="line-number">71</span>
+<span class="line-number">72</span>
+<span class="line-number">73</span>
+<span class="line-number">74</span>
+<span class="line-number">75</span>
+<span class="line-number">76</span>
+<span class="line-number">77</span>
+<span class="line-number">78</span>
+<span class="line-number">79</span>
+<span class="line-number">80</span>
+<span class="line-number">81</span>
+</pre></td><td class="code"><pre><code class="java"><span class="line"><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
+</span><span class="line"><span class="kn">import</span> <span class="nn">java.lang.Integer</span><span class="o">;</span>
+</span><span class="line"><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
+</span><span class="line">
+</span><span class="line"><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntToList</span> <span class="o">{</span>
+</span><span class="line">
+</span><span class="line">  <span class="kd">private</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">converted</span><span class="o">;</span>
+</span><span class="line">  <span class="kd">private</span> <span class="n">Integer</span> <span class="n">toBeConverted</span><span class="o">;</span>
+</span><span class="line">
+</span><span class="line">
+</span><span class="line">  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">argv</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="line">
+</span><span class="line">	<span class="c1">// Create a IntToList Object to use during conversion</span>
+</span><span class="line">	<span class="n">IntToList</span> <span class="n">obj</span><span class="o">;</span>
+</span><span class="line">	
+</span><span class="line">    <span class="c1">// Create a buffered reader to read the integer</span>
+</span><span class="line">    <span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">));</span>
+</span><span class="line">
+</span><span class="line">    <span class="c1">// To be used to get the input of a file</span>
+</span><span class="line">    <span class="n">String</span> <span class="n">input</span><span class="o">;</span>
+</span><span class="line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s: &quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer to convert&quot;</span><span class="o">);</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">try</span> <span class="o">{</span>
+</span><span class="line">      <span class="c1">// Read in the user input</span>
+</span><span class="line">      <span class="n">input</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
+</span><span class="line">
+</span><span class="line">      <span class="c1">// Convert the string to an int using library functions</span>
+</span><span class="line">      <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntToList</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
+</span><span class="line">
+</span><span class="line">      <span class="n">obj</span><span class="o">.</span><span class="na">convertToList</span><span class="o">();</span>
+</span><span class="line">      <span class="n">obj</span><span class="o">.</span><span class="na">printList</span><span class="o">();</span>
+</span><span class="line">
+</span><span class="line">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NumberFormatException</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// Catch a non-integer input or too large input</span>
+</span><span class="line">  	  <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s\n&quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer.&quot;</span><span class="o">);</span>
+</span><span class="line">    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">E</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Everything else</span>
+</span><span class="line">      <span class="n">E</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
+</span><span class="line">    <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="k">return</span><span class="o">;</span>
+</span><span class="line">
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="kd">public</span> <span class="nf">IntToList</span><span class="o">(</span><span class="n">Integer</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="line">	  <span class="c1">// Initializations</span>
+</span><span class="line">	  <span class="n">toBeConverted</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
+</span><span class="line">	  <span class="n">converted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">convertToList</span><span class="o">()</span> <span class="o">{</span>
+</span><span class="line">
+</span><span class="line">    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">toBeConverted</span><span class="o">.</span><span class="na">intValue</span><span class="o">(),</span> <span class="n">remainder</span><span class="o">;</span>
+</span><span class="line">
+</span><span class="line">    <span class="c1">// Once the integer is equal to zero, there are no more single digits to extract</span>
+</span><span class="line">    <span class="k">while</span><span class="o">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="line">    	
+</span><span class="line">      <span class="c1">// This remainder will be committed to the list of integers</span>
+</span><span class="line">      <span class="n">remainder</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">10</span><span class="o">;</span>
+</span><span class="line">
+</span><span class="line">      <span class="c1">// This will add the integer to the front of the list</span>
+</span><span class="line">      <span class="n">converted</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="n">remainder</span><span class="o">));</span>
+</span><span class="line">
+</span><span class="line">      <span class="c1">// This will remove a power of 10 from the read in integer, casted to not be a double</span>
+</span><span class="line">      <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">temp</span> <span class="o">/</span> <span class="mi">10</span><span class="o">);</span>
+</span><span class="line">    <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">()</span> <span class="o">{</span>
+</span><span class="line">	
+</span><span class="line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Converted Integer to List: &quot;</span><span class="o">);</span>
+</span><span class="line">	
+</span><span class="line">    <span class="c1">// Print out all the single digits in the list</span>
+</span><span class="line">    <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="o">:</span> <span class="n">converted</span><span class="o">)</span> <span class="o">{</span>
+</span><span class="line">    	<span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
+</span><span class="line">    <span class="o">}</span>
+</span><span class="line">
+</span><span class="line">    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\n&quot;</span><span class="o">);</span>
+</span><span class="line">
+</span><span class="line">  <span class="o">}</span>
+</span><span class="line">
+</span><span class="line"><span class="o">}</span>
+</span></code></pre></td></tr></table></div></figure></notextile></div>
 </div>
 
 

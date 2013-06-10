@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithms | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/algorithms/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-09T21:22:48-07:00</updated>
+  <updated>2013-06-09T21:32:42-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,11 +18,11 @@
     <link href="http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem/"/>
     <updated>2013-06-08T21:45:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem</id>
-    <content type="html"><![CDATA[<p>In the Copy Paste Select-All problem, a user wants to replicate the most amount of &lsquo;a&rsquo;s with the least amount of keystrokes. I was asked how many keystrokes would be necessary to produce 50,000 'a&rsquo;s.</p>
+    <content type="html"><![CDATA[<p>In the Copy Paste Select-All problem, a user wants to replicate the most amount of ‘a’s with the least amount of keystrokes. I was asked how many keystrokes would be necessary to produce 50,000 ‘a’s.</p>
 
-<p>There are 3 basic ways to create &lsquo;a&rsquo;s: Pressing 'a&rsquo;, Selecting-All &ndash;> Copying &ndash;> Pasting, and Pasting what is in the clip board. Pressing &lsquo;a&rsquo; will cost 1 keystroke while selecting-all, copying, pasting will cost 2 each. So just pasting will cost 2 keystrokes, but selecting-all &ndash;> copying &ndash;> pasting will cost 6.</p>
+<p>There are 3 basic ways to create ‘a’s: Pressing ‘a’, Selecting-All -&gt; Copying -&gt; Pasting, and Pasting what is in the clip board. Pressing ‘a’ will cost 1 keystroke while selecting-all, copying, pasting will cost 2 each. So just pasting will cost 2 keystrokes, but selecting-all -&gt; copying -&gt; pasting will cost 6.</p>
 
-<p>Now let&rsquo;s create the recursive definition of our dynamic programming problem.
+<p>Now let’s create the recursive definition of our dynamic programming problem.
 $$
 L(x) = { \mbox{max}[ L(x-6)*2,L(x-2)+buffer,L(x-1)+1 ] }
 $$</p>
@@ -425,7 +425,7 @@ $$</p>
 
 <p>How would you tell if there is a loop in a linked list if there is an arbitrary length, using little to no memory?</p>
 
-<p>The idea in solving this problem is having two iterators, one of which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to &ndash; or laps &ndash; the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
+<p>The idea in solving this problem is having two iterators, one of which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to - or laps - the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
 
 <p>In the following code example I made the one iterator move twice as fast as the other. At each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
 
@@ -678,10 +678,8 @@ $$</p>
 </span></code></pre></td></tr></table></div></figure></notextile></div></p>
 
 <!--more-->
-
-
 <p>The first line in nodes.txt signifies how many nodes there are in the list.
-The value on the second line signifies which node to connect the last node to (i.e.&ndash; from which node to create the loop in the linked list). A negative value here signifies not to create a loop.</p>
+The value on the second line signifies which node to connect the last node to (i.e.- from which node to create the loop in the linked list). A negative value here signifies not to create a loop.</p>
 
 <p><div class='bogus-wrapper'><notextile><figure class='code'><figcaption><span> (nodes.txt)</span> <a href='/downloads/code/nodes.txt'>download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>

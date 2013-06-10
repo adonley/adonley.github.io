@@ -4,7 +4,7 @@
   <title><![CDATA[Category: algorithm | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/algorithm/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-09T21:22:48-07:00</updated>
+  <updated>2013-06-09T21:32:42-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,7 +18,7 @@
     <link href="http://adonley.github.io/blog/2013/05/31/an-interview-question/"/>
     <updated>2013-05-31T02:53:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/05/31/an-interview-question</id>
-    <content type="html"><![CDATA[<p>Here&rsquo;s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
+    <content type="html"><![CDATA[<p>Here’s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
 
 <p>Write a function that will convert an integer into a list of single digits.</p>
 
@@ -191,7 +191,7 @@
 </span><span class='line'>  <span class="o">}</span>
 </span><span class='line'>
 </span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure></notextile></div></p>
+</span></code></pre></td></tr></table></div></figure></notextile></div> </p>
 ]]></content>
   </entry>
   

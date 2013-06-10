@@ -4,7 +4,7 @@
   <title><![CDATA[Category: Bash | Found Objects]]></title>
   <link href="http://adonley.github.io/blog/categories/bash/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-09T21:22:48-07:00</updated>
+  <updated>2013-06-09T21:32:42-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -18,22 +18,19 @@
     <link href="http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/"/>
     <updated>2013-05-29T16:09:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux</id>
-    <content type="html"><![CDATA[<p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
+    <content type="html"><![CDATA[<p>If you’re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
 
-<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regular Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
+<p>A quick side note about regular expressions - they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command ‘grep’ was born. ‘g/re/p’ meant Global search for Regular Expression and Print matching lines in ‘ed’.</p>
 
-<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
-
+<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here’s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a>) 
 <!--more-->
-
-
-<p><div>
+<div>
   <pre><code class='bash'>Basic: vi, sed, grep, csplit, dbx, dbxtool, more, ed, expr, lex, pg, nl, rdist
 Extended: awk, nawk, egrep</code></pre>
 </div>
 </p>
 
-<p>The main difference between basic and extended concerns the way in which metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as &lsquo;{&rsquo; are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
+<p>The main difference between basic and extended concerns the way in which metacharacters are expressed. With basic regular expressions, the meta characters need to be escaped with the backslash character in order to perceived as such. In extended regular expressions, it is assumed that characters such as ‘{‘ are meta characters unless they are escaped with the backslash (there are some implicit ways of detecting that it is not a meta character, but that is for another time).</p>
 
 <p>Here are some of the meta chars used by extended regular expressions:</p>
 
@@ -52,22 +49,20 @@ Extended: awk, nawk, egrep</code></pre>
   <li>'|' - This is the logical or symbol.</li>
 </ul>
 
-
 <p>Now check this out:
 <code>
 $ ls -la | grep -E 'profile$'
 </code>
 This command will match all the files in /etc/ that end with profile.</p>
 
-<p>See if you can use this to find the meaning of the site&rsquo;s subtitle.</p>
+<p>See if you can use this to find the meaning of the site’s subtitle.</p>
 
-<hr>
+<hr />
 
-
-<p>For more information visit:<br>
-<a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/"><a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/">http://www.ibm.com/developerworks/aix/library/au-speakingunix9/</a></a><br>
-<a href="http://en.wikipedia.org/wiki/Regular_expression"><a href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</a></a><br>
-<a href="http://www.regular-expressions.info/posix.html"><a href="http://www.regular-expressions.info/posix.html">http://www.regular-expressions.info/posix.html</a></a><br>
+<p>For more information visit:<br />
+<a href="http://www.ibm.com/developerworks/aix/library/au-speakingunix9/">http://www.ibm.com/developerworks/aix/library/au-speakingunix9/</a><br />
+<a href="http://en.wikipedia.org/wiki/Regular_expression">http://en.wikipedia.org/wiki/Regular_expression</a><br />
+<a href="http://www.regular-expressions.info/posix.html">http://www.regular-expressions.info/posix.html</a><br />
 And finally, always consult your man pages when in doubt. There are some good instructions in the man pages for grep, especially about the differences between basic and extended regular expressions.</p>
 ]]></content>
   </entry>
