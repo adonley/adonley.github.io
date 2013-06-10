@@ -5,7 +5,7 @@
 <!--[if (gt IE 8)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" lang="en"><!--<![endif]-->
 <head>
   <meta charset="utf-8">
-  <title>Found Objects</title>
+  <title>Copy Paste Select-All Problem - Found Objects</title>
   <meta name="author" content="Andrew Donley">
 
   
@@ -18,7 +18,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   
-  <link rel="canonical" href="http://adonley.github.io">
+  <link rel="canonical" href="http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem">
   <link href="/favicon.png" rel="icon">
   <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css">
   <link href="/atom.xml" rel="alternate" title="Found Objects" type="application/atom+xml">
@@ -63,15 +63,12 @@
 </nav>
   <div id="main">
     <div id="content">
-      <div class="blog-index">
+      <div>
+<article class="hentry" role="article">
   
-  
-  
-    <article>
-      
   <header>
     
-      <h1 class="entry-title"><a href="/blog/2013/06/08/copy-paste-select-all-problem/">Copy Paste Select-All Problem</a></h1>
+      <h1 class="entry-title">Copy Paste Select-All Problem</h1>
     
     
       <p class="meta">
@@ -94,7 +91,7 @@
   </header>
 
 
-  <div class="entry-content"><p>In the Copy Paste Select-All problem, a user wants to replicate the most amount of &lsquo;a&rsquo;s with the least amount of keystrokes. I was asked how many keystrokes would be necessary to produce 50,000 &#8216;a&rsquo;s.</p>
+<div class="entry-content"><p>In the Copy Paste Select-All problem, a user wants to replicate the most amount of &lsquo;a&rsquo;s with the least amount of keystrokes. I was asked how many keystrokes would be necessary to produce 50,000 &#8216;a&rsquo;s.</p>
 
 <p>There are 3 basic ways to create &lsquo;a&rsquo;s: Pressing &#8216;a&rsquo;, Selecting-All &ndash;> Copying &ndash;> Pasting, and Pasting what is in the clip board. Pressing &lsquo;a&rsquo; will cost 1 keystroke while selecting-all, copying, pasting will cost 2 each. So just pasting will cost 2 keystrokes, but selecting-all &ndash;> copying &ndash;> pasting will cost 6.</p>
 
@@ -491,323 +488,16 @@ $$</p>
 </span></code></pre></td></tr></table></div></figure>
 
 </div>
-  
-  
 
 
-    </article>
-  
-  
-    <article>
+  <footer>
+    <p class="meta">
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/31/more-interview-questions/">Another Interview Question</a></h1>
-    
-    
-      <p class="meta">
-        
-
-
-
-
-
-
-
-
   
 
+<span class="byline author vcard">Posted by <span class="fn">Andrew Donley</span></span>
 
-<time datetime="2013-05-31T21:22:00-07:00" pubdate data-updated="true">May 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>This is another problem that is bound to come up during an interview.</p>
-
-<p>How would you tell if there is a loop in a linked list if there is an arbitrary length, using little to no memory?</p>
-
-<p>The idea in solving this problem is having two iterators, one of which iterates faster through the linked list than the other. This way, the faster moving iterator catches up to &ndash; or laps &ndash; the slower iterator in the event of a loop. Otherwise the first iterator will find the end of the list.</p>
-
-<p>In the following code example I made the one iterator move twice as fast as the other. At each step I check to see if the iterators point to the same object or the end of the linked list is found.</p>
-
-<p>Feel free to download and try it yourself.</p>
-
-<p>Compile with:</p>
-
-<figure class='code'><div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-</pre></td><td class='code'><pre><code class=''><span class='line'>$ gcc LinkedListLoopDetection.c -o LinkedListLoopDetection
-</span><span class='line'>$ ./LinkedListLoopDetection &lt; nodes.txt</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-<figure class='code'><figcaption><span> (LinkedListLoopDetection.c)</span> <a href='/downloads/code/LinkedListLoopDetection.c'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-<span class='line-number'>82</span>
-<span class='line-number'>83</span>
-<span class='line-number'>84</span>
-<span class='line-number'>85</span>
-<span class='line-number'>86</span>
-<span class='line-number'>87</span>
-<span class='line-number'>88</span>
-<span class='line-number'>89</span>
-<span class='line-number'>90</span>
-<span class='line-number'>91</span>
-<span class='line-number'>92</span>
-<span class='line-number'>93</span>
-<span class='line-number'>94</span>
-<span class='line-number'>95</span>
-<span class='line-number'>96</span>
-<span class='line-number'>97</span>
-<span class='line-number'>98</span>
-<span class='line-number'>99</span>
-<span class='line-number'>100</span>
-<span class='line-number'>101</span>
-<span class='line-number'>102</span>
-<span class='line-number'>103</span>
-<span class='line-number'>104</span>
-<span class='line-number'>105</span>
-<span class='line-number'>106</span>
-<span class='line-number'>107</span>
-<span class='line-number'>108</span>
-<span class='line-number'>109</span>
-<span class='line-number'>110</span>
-<span class='line-number'>111</span>
-<span class='line-number'>112</span>
-<span class='line-number'>113</span>
-<span class='line-number'>114</span>
-<span class='line-number'>115</span>
-<span class='line-number'>116</span>
-<span class='line-number'>117</span>
-<span class='line-number'>118</span>
-</pre></td><td class='code'><pre><code class='c'><span class='line'><span class="cp">#include&lt;stdio.h&gt;</span>
-</span><span class='line'><span class="cp">#include&lt;stdlib.h&gt;</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Functions</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">listInitialize</span><span class="p">();</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">detectLoop</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// List Node Struct</span>
-</span><span class='line'><span class="k">struct</span> <span class="n">Node</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span> <span class="n">next</span><span class="p">;</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">info</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="p">};</span>
-</span><span class='line'>
-</span><span class='line'><span class="c1">// Globals</span>
-</span><span class='line'><span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span> <span class="n">list</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">numberOfNodes</span><span class="p">;</span>
-</span><span class='line'><span class="kt">int</span> <span class="n">loopBegin</span><span class="p">;</span> <span class="c1">// This is the node where the loop starts in the list</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="n">listInitialize</span><span class="p">();</span>
-</span><span class='line'>  <span class="n">detectLoop</span><span class="p">();</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="kt">void</span> <span class="nf">detectLoop</span><span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// Going to use two pointers to traverse the list.</span>
-</span><span class='line'>  <span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">iter1</span> <span class="o">=</span> <span class="n">list</span><span class="p">,</span> <span class="o">*</span><span class="n">iter2</span> <span class="o">=</span> <span class="n">list</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">while</span><span class="p">(</span><span class="n">iter1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">!=</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">iter1</span> <span class="o">=</span> <span class="n">iter1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>    <span class="c1">// If iter1 equals iter2 we know there is a loop</span>
-</span><span class='line'>    <span class="c1">// Also if iter1-&gt;next equals NULL we know there is no loop</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">iter1</span> <span class="o">==</span> <span class="n">iter2</span> <span class="o">||</span> <span class="n">iter1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
-</span><span class='line'>    <span class="c1">// Move iter a second time</span>
-</span><span class='line'>    <span class="n">iter1</span> <span class="o">=</span> <span class="n">iter1</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Check Equality Again</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">iter1</span> <span class="o">==</span> <span class="n">iter2</span><span class="p">)</span>
-</span><span class='line'>      <span class="k">break</span><span class="p">;</span>
-</span><span class='line'>    <span class="k">else</span>
-</span><span class='line'>      <span class="c1">// Move iter2 by one</span>
-</span><span class='line'>      <span class="n">iter2</span> <span class="o">=</span> <span class="n">iter2</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// If there is there is a NULL pointer we know we reached</span>
-</span><span class='line'>  <span class="c1">//   the end of the list</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">iter1</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="s">&quot;There was no loop in this Linked List.&quot;</span><span class="p">);</span>
-</span><span class='line'>  <span class="c1">// Otherwise the while loop broke because it found a loop</span>
-</span><span class='line'>  <span class="c1">//   in the Linked List</span>
-</span><span class='line'>  <span class="k">else</span>
-</span><span class='line'>    <span class="n">printf</span><span class="p">(</span><span class="s">&quot;%s</span><span class="se">\n</span><span class="s">&quot;</span><span class="p">,</span><span class="s">&quot;There was a loop in the Linked List.&quot;</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="cm">/* </span>
-</span><span class='line'><span class="cm"> * Reads in file and initializes the list including a loop</span>
-</span><span class='line'><span class="cm"> * if specified.</span>
-</span><span class='line'><span class="cm"> */</span>
-</span><span class='line'><span class="kt">void</span> <span class="nf">listInitialize</span> <span class="p">()</span> <span class="p">{</span>
-</span><span class='line'>  <span class="kt">char</span> <span class="n">temp</span><span class="p">[</span><span class="mi">256</span><span class="p">];</span>
-</span><span class='line'>  <span class="kt">int</span> <span class="n">i</span><span class="p">;</span>
-</span><span class='line'>  <span class="c1">// This is to keep track of place in list</span>
-</span><span class='line'>  <span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="n">iter</span><span class="p">,</span> <span class="o">*</span><span class="n">iter2</span><span class="p">;</span>
-</span><span class='line'>  <span class="c1">// Read in number of nodes</span>
-</span><span class='line'>  <span class="n">fgets</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
-</span><span class='line'>  <span class="n">numberOfNodes</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-</span><span class='line'>  <span class="c1">// Read in loop beginning node</span>
-</span><span class='line'>  <span class="n">fgets</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
-</span><span class='line'>  <span class="n">loopBegin</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">numberOfNodes</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Throw this guy on the heap</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">==</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">iter</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">Node</span><span class="p">));</span>
-</span><span class='line'>      <span class="n">list</span> <span class="o">=</span> <span class="n">iter</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="n">iter</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="p">(</span><span class="k">struct</span> <span class="n">Node</span> <span class="o">*</span><span class="p">)</span><span class="n">malloc</span><span class="p">(</span><span class="k">sizeof</span><span class="p">(</span><span class="k">struct</span> <span class="n">Node</span><span class="p">));</span>
-</span><span class='line'>    <span class="n">fgets</span><span class="p">(</span><span class="n">temp</span><span class="p">,</span><span class="mi">256</span><span class="p">,</span><span class="n">stdin</span><span class="p">);</span>
-</span><span class='line'>    <span class="n">iter</span><span class="o">-&gt;</span><span class="n">info</span> <span class="o">=</span> <span class="n">atoi</span><span class="p">(</span><span class="n">temp</span><span class="p">);</span>
-</span><span class='line'>    <span class="c1">// Don&#39;t want to move to next on the last iteration</span>
-</span><span class='line'>    <span class="k">if</span><span class="p">(</span><span class="n">i</span> <span class="o">&lt;</span> <span class="n">numberOfNodes</span> <span class="o">-</span> <span class="mi">1</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="n">iter</span> <span class="o">=</span> <span class="p">(</span><span class="o">*</span><span class="n">iter</span><span class="p">).</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="k">else</span>
-</span><span class='line'>      <span class="c1">// Get rid of unnecessary allocation</span>
-</span><span class='line'>      <span class="n">free</span><span class="p">(</span><span class="n">iter</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">);</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// Negative Value means create no loop</span>
-</span><span class='line'>  <span class="k">if</span><span class="p">(</span><span class="n">loopBegin</span> <span class="o">&gt;=</span> <span class="mi">0</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Initialize iter2 to head of the list</span>
-</span><span class='line'>    <span class="n">iter2</span> <span class="o">=</span> <span class="n">list</span><span class="p">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">for</span><span class="p">(</span><span class="n">i</span> <span class="o">=</span> <span class="mi">0</span><span class="p">;</span> <span class="n">i</span> <span class="o">&lt;</span> <span class="n">loopBegin</span><span class="p">;</span> <span class="n">i</span><span class="o">++</span><span class="p">)</span> <span class="p">{</span>
-</span><span class='line'>      <span class="c1">// Get to the spot where we want to create the loop</span>
-</span><span class='line'>      <span class="n">iter2</span> <span class="o">=</span> <span class="n">iter2</span><span class="o">-&gt;</span><span class="n">next</span><span class="p">;</span>
-</span><span class='line'>    <span class="p">}</span>
-</span><span class='line'>    <span class="c1">// Create the Loop</span>
-</span><span class='line'>    <span class="n">iter</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="n">iter2</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>  <span class="k">else</span> <span class="p">{</span>
-</span><span class='line'>    <span class="c1">// Create no Loop</span>
-</span><span class='line'>    <span class="n">iter</span><span class="o">-&gt;</span><span class="n">next</span> <span class="o">=</span> <span class="nb">NULL</span><span class="p">;</span>
-</span><span class='line'>  <span class="p">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="k">return</span><span class="p">;</span>
-</span><span class='line'><span class="p">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-
-
-</div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/05/31/more-interview-questions/">Read on &rarr;</a>
-    </footer>
-  
-
-
-    </article>
-  
-  
-    <article>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/31/an-interview-question/">An Interview Question</a></h1>
-    
-    
-      <p class="meta">
-        
 
 
 
@@ -819,248 +509,42 @@ $$</p>
   
 
 
-<time datetime="2013-05-31T02:53:00-07:00" pubdate data-updated="true">May 31<span>st</span>, 2013</time>
-        
-      </p>
-    
-  </header>
-
-
-  <div class="entry-content"><p>Here&rsquo;s one of the (admittedly easy) questions I received during an interview at Palantir:</p>
-
-<p>Write a function that will convert an integer into a list of single digits.</p>
-
-<p>So, how do you separate individual digits out of an integer? Simply put, division.</p>
-
-<p>Say we had the number 112095. If we divide this number by 10 we achieve 11209.5 or 11209 remainder 5. The remainder will allow us to isolate the least significant digit. The main idea lies within taking the modulus of the original number by 10.</p>
-
-<p>This is a quick java program I wrote up that accomplishes this:</p>
-
-<figure class='code'><figcaption><span> (IntToList.java)</span> <a href='/downloads/code/IntToList.java'>download</a></figcaption>
- <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class='line-number'>1</span>
-<span class='line-number'>2</span>
-<span class='line-number'>3</span>
-<span class='line-number'>4</span>
-<span class='line-number'>5</span>
-<span class='line-number'>6</span>
-<span class='line-number'>7</span>
-<span class='line-number'>8</span>
-<span class='line-number'>9</span>
-<span class='line-number'>10</span>
-<span class='line-number'>11</span>
-<span class='line-number'>12</span>
-<span class='line-number'>13</span>
-<span class='line-number'>14</span>
-<span class='line-number'>15</span>
-<span class='line-number'>16</span>
-<span class='line-number'>17</span>
-<span class='line-number'>18</span>
-<span class='line-number'>19</span>
-<span class='line-number'>20</span>
-<span class='line-number'>21</span>
-<span class='line-number'>22</span>
-<span class='line-number'>23</span>
-<span class='line-number'>24</span>
-<span class='line-number'>25</span>
-<span class='line-number'>26</span>
-<span class='line-number'>27</span>
-<span class='line-number'>28</span>
-<span class='line-number'>29</span>
-<span class='line-number'>30</span>
-<span class='line-number'>31</span>
-<span class='line-number'>32</span>
-<span class='line-number'>33</span>
-<span class='line-number'>34</span>
-<span class='line-number'>35</span>
-<span class='line-number'>36</span>
-<span class='line-number'>37</span>
-<span class='line-number'>38</span>
-<span class='line-number'>39</span>
-<span class='line-number'>40</span>
-<span class='line-number'>41</span>
-<span class='line-number'>42</span>
-<span class='line-number'>43</span>
-<span class='line-number'>44</span>
-<span class='line-number'>45</span>
-<span class='line-number'>46</span>
-<span class='line-number'>47</span>
-<span class='line-number'>48</span>
-<span class='line-number'>49</span>
-<span class='line-number'>50</span>
-<span class='line-number'>51</span>
-<span class='line-number'>52</span>
-<span class='line-number'>53</span>
-<span class='line-number'>54</span>
-<span class='line-number'>55</span>
-<span class='line-number'>56</span>
-<span class='line-number'>57</span>
-<span class='line-number'>58</span>
-<span class='line-number'>59</span>
-<span class='line-number'>60</span>
-<span class='line-number'>61</span>
-<span class='line-number'>62</span>
-<span class='line-number'>63</span>
-<span class='line-number'>64</span>
-<span class='line-number'>65</span>
-<span class='line-number'>66</span>
-<span class='line-number'>67</span>
-<span class='line-number'>68</span>
-<span class='line-number'>69</span>
-<span class='line-number'>70</span>
-<span class='line-number'>71</span>
-<span class='line-number'>72</span>
-<span class='line-number'>73</span>
-<span class='line-number'>74</span>
-<span class='line-number'>75</span>
-<span class='line-number'>76</span>
-<span class='line-number'>77</span>
-<span class='line-number'>78</span>
-<span class='line-number'>79</span>
-<span class='line-number'>80</span>
-<span class='line-number'>81</span>
-</pre></td><td class='code'><pre><code class='java'><span class='line'><span class="kn">import</span> <span class="nn">java.util.LinkedList</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">java.lang.Integer</span><span class="o">;</span>
-</span><span class='line'><span class="kn">import</span> <span class="nn">java.io.*</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'><span class="kd">public</span> <span class="kd">class</span> <span class="nc">IntToList</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">private</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;</span> <span class="n">converted</span><span class="o">;</span>
-</span><span class='line'>  <span class="kd">private</span> <span class="n">Integer</span> <span class="n">toBeConverted</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span> <span class="o">[]</span> <span class="n">argv</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="c1">// Create a IntToList Object to use during conversion</span>
-</span><span class='line'>  <span class="n">IntToList</span> <span class="n">obj</span><span class="o">;</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="c1">// Create a buffered reader to read the integer</span>
-</span><span class='line'>    <span class="n">BufferedReader</span> <span class="n">in</span> <span class="o">=</span> <span class="k">new</span> <span class="n">BufferedReader</span><span class="o">(</span><span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// To be used to get the input of a file</span>
-</span><span class='line'>    <span class="n">String</span> <span class="n">input</span><span class="o">;</span>
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s: &quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer to convert&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">try</span> <span class="o">{</span>
-</span><span class='line'>      <span class="c1">// Read in the user input</span>
-</span><span class='line'>      <span class="n">input</span> <span class="o">=</span> <span class="n">in</span><span class="o">.</span><span class="na">readLine</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// Convert the string to an int using library functions</span>
-</span><span class='line'>      <span class="n">obj</span> <span class="o">=</span> <span class="k">new</span> <span class="n">IntToList</span><span class="o">(</span><span class="n">Integer</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">input</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="n">obj</span><span class="o">.</span><span class="na">convertToList</span><span class="o">();</span>
-</span><span class='line'>      <span class="n">obj</span><span class="o">.</span><span class="na">printList</span><span class="o">();</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">NumberFormatException</span> <span class="n">N</span><span class="o">)</span> <span class="o">{</span>  <span class="c1">// Catch a non-integer input or too large input</span>
-</span><span class='line'>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&quot;%s\n&quot;</span><span class="o">,</span><span class="s">&quot;Please enter an integer.&quot;</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">Exception</span> <span class="n">E</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// Everything else</span>
-</span><span class='line'>      <span class="n">E</span><span class="o">.</span><span class="na">printStackTrace</span><span class="o">();</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="k">return</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="nf">IntToList</span><span class="o">(</span><span class="n">Integer</span> <span class="n">input</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>    <span class="c1">// Initializations</span>
-</span><span class='line'>    <span class="n">toBeConverted</span> <span class="o">=</span> <span class="n">input</span><span class="o">.</span><span class="na">intValue</span><span class="o">();</span>
-</span><span class='line'>    <span class="n">converted</span> <span class="o">=</span> <span class="k">new</span> <span class="n">LinkedList</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">&gt;();</span>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">convertToList</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="kt">int</span> <span class="n">temp</span> <span class="o">=</span> <span class="n">toBeConverted</span><span class="o">.</span><span class="na">intValue</span><span class="o">(),</span> <span class="n">remainder</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="c1">// Once the integer is equal to zero, there are no more single digits to extract</span>
-</span><span class='line'>    <span class="k">while</span><span class="o">(</span><span class="n">temp</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>      
-</span><span class='line'>      <span class="c1">// This remainder will be committed to the list of integers</span>
-</span><span class='line'>      <span class="n">remainder</span> <span class="o">=</span> <span class="n">temp</span> <span class="o">%</span> <span class="mi">10</span><span class="o">;</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// This will add the integer to the front of the list</span>
-</span><span class='line'>      <span class="n">converted</span><span class="o">.</span><span class="na">addFirst</span><span class="o">(</span><span class="k">new</span> <span class="n">Integer</span><span class="o">(</span><span class="n">remainder</span><span class="o">));</span>
-</span><span class='line'>
-</span><span class='line'>      <span class="c1">// This will remove a power of 10 from the read in integer, casted to not be a double</span>
-</span><span class='line'>      <span class="n">temp</span> <span class="o">=</span> <span class="o">(</span><span class="kt">int</span><span class="o">)</span><span class="n">Math</span><span class="o">.</span><span class="na">floor</span><span class="o">(</span><span class="n">temp</span> <span class="o">/</span> <span class="mi">10</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="kd">public</span> <span class="kt">void</span> <span class="nf">printList</span><span class="o">()</span> <span class="o">{</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;Converted Integer to List: &quot;</span><span class="o">);</span>
-</span><span class='line'>  
-</span><span class='line'>    <span class="c1">// Print out all the single digits in the list</span>
-</span><span class='line'>    <span class="k">for</span> <span class="o">(</span><span class="n">Integer</span> <span class="n">i</span> <span class="o">:</span> <span class="n">converted</span><span class="o">)</span> <span class="o">{</span>
-</span><span class='line'>      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="n">i</span><span class="o">);</span>
-</span><span class='line'>    <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'>    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">print</span><span class="o">(</span><span class="s">&quot;\n&quot;</span><span class="o">);</span>
-</span><span class='line'>
-</span><span class='line'>  <span class="o">}</span>
-</span><span class='line'>
-</span><span class='line'><span class="o">}</span>
-</span></code></pre></td></tr></table></div></figure>
-
-
-<p></p>
-</div>
-  
-  
-
-
-    </article>
-  
-  
-    <article>
+<time datetime="2013-06-08T21:45:00-07:00" pubdate data-updated="true">Jun 8<span>th</span>, 2013</time>
       
-  <header>
-    
-      <h1 class="entry-title"><a href="/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/">A Brief Review: Regular Expressions (in Linux)</a></h1>
-    
-    
-      <p class="meta">
-        
 
-
-
-
-
-
-
-
+<span class="categories">
   
+    <a class='category' href='/blog/categories/algorithms/'>algorithms</a>, <a class='category' href='/blog/categories/dynamic-programming/'>dynamic programming</a>, <a class='category' href='/blog/categories/interview-questions/'>interview questions</a>
+  
+</span>
 
 
-<time datetime="2013-05-29T16:09:00-07:00" pubdate data-updated="true">May 29<span>th</span>, 2013</time>
-        
-      </p>
+    </p>
     
-  </header>
+      <div class="sharing">
+  
+  <a href="http://twitter.com/share" class="twitter-share-button" data-url="http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem/" data-via="" data-counturl="http://adonley.github.io/blog/2013/06/08/copy-paste-select-all-problem/" >Tweet</a>
+  
+  
+  <div class="g-plusone" data-size="small"></div>
+  
+  
+    <div class="fb-like" data-send="true" data-width="450" data-show-faces="false"></div>
+  
+</div>
 
-
-  <div class="entry-content"><p>If you&rsquo;re like me, you learned regular expressions in Theory of Computation and quickly forgot about them. Regular expressions are a powerful tool on the command line and can save you copious amounts of time when searching for patterns.</p>
-
-<p>A quick side note about regular expressions &ndash; they were first implemented by <a href="http://en.wikipedia.org/wiki/Ken_Thompson">Ken Thompson</a> in his editor QED. Later, he took this same idea and put it the linux editor <a href="http://en.wikipedia.org/wiki/Ed_(text_editor)">ed</a>. From this editor is where the linux command &lsquo;grep&rsquo; was born. &lsquo;g/re/p&rsquo; meant Global search for Regular Expression and Print matching lines in &lsquo;ed&rsquo;.</p>
-
-<p>There are two basic sets of regular expressions: basic and extended [these are both POSIX]. Most programs in linux use the basic regular expression type. Here&rsquo;s a list of some of the programs that use the basic format and extended format (taken from <a href="http://www.grymoire.com/Unix/Regular.html"><a href="http://www.grymoire.com/Unix/Regular.html">http://www.grymoire.com/Unix/Regular.html</a></a>)</p>
+    
+    <p class="meta">
+      
+        <a class="basic-alignment left" href="/blog/2013/05/31/more-interview-questions/" title="Previous Post: Another Interview Question">&laquo; Another Interview Question</a>
+      
+      
+    </p>
+  </footer>
+</article>
 
 </div>
-  
-  
-    <footer>
-      <a rel="full-article" href="/blog/2013/05/29/a-breif-overview-regular-expressions-in-linux/">Read on &rarr;</a>
-    </footer>
-  
 
-
-    </article>
-  
-  <div class="pagination">
-    
-    <a href="/blog/archives">Blog Archives</a>
-    
-  </div>
-</div>
 <aside class="sidebar">
   
     <section>
@@ -1092,6 +576,7 @@ $$</p>
 
   
 </aside>
+
 
     </div>
   </div>
