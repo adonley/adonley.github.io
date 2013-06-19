@@ -4,7 +4,7 @@
   <title><![CDATA[Found Objects]]></title>
   <link href="http://adonley.github.io/atom.xml" rel="self"/>
   <link href="http://adonley.github.io/"/>
-  <updated>2013-06-18T23:48:36-07:00</updated>
+  <updated>2013-06-19T00:07:02-07:00</updated>
   <id>http://adonley.github.io/</id>
   <author>
     <name><![CDATA[Andrew Donley]]></name>
@@ -19,8 +19,8 @@
     <updated>2013-06-18T23:13:00-07:00</updated>
     <id>http://adonley.github.io/blog/2013/06/18/longest-non-decreasing-subsequence</id>
     <content type="html"><![CDATA[<script type="math/tex; mode=display">% &lt;![CDATA[
- \mbox{Given an array of integers } A \mbox{ of length } n \mbox{, find the longest sequence } \langle i_1,...,i_k \rangle
- \mbox{such that } i_j < i_{j+1} \mbox{ and } A[i_j] \leq A[i_{j+1}] \mbox{ for any } j \in [1,k-1] %]]&gt;</script>
+ \mbox{Given an array of integers } A \mbox{ of length } n \mbox{, find the longest sequence } \langle i_1,...,i_k \rangle \\
+ \mbox{ such that } i_j < i_{j+1} \mbox{ and } A[i_j] \leq A[i_{j+1}] \mbox{ for any } j \in [1,k-1] %]]&gt;</script>
 
 <div class="bogus-wrapper"><notextile><figure class="code"><figcaption><span> (LongestNonDecreasingSubsequence.h)</span> <a href="http://adonley.github.io/downloads/code/LongestNonDecreasingSubsequence.h">download</a></figcaption>
  <div class="highlight"><table><tr><td class="gutter"><pre class="line-numbers"><span class="line-number">1</span>
